@@ -6,6 +6,7 @@
         "namespace": "seldon",
         "creationTimestamp": null,
         "labels": {
+            "app.kubernetes.io/instance": "62c3f259-ad01-4853-9c7d-fef0a243d071-seldon",
             "fluentd": "true"
         }
     },
@@ -40,7 +41,15 @@
                 "replicas": 1,
                 "engineResources": {},
                 "svcOrchSpec": {},
-                "traffic": 100
+                "traffic": 100,
+                "explainer": {
+                    "type": "AnchorTabular",
+                    "modelUri": "gs://seldon-models/sklearn/income/explainer-py36-0.5.2",
+                    "containerSpec": {
+                        "name": "",
+                        "resources": {}
+                    }
+                }
             }
         ],
         "annotations": {
